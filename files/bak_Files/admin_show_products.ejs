@@ -1,0 +1,113 @@
+<%-include("admin_header.ejs")%>
+    <div id="page-wrapper" style="position: relative;top:30px;">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Product</h2>
+                    <h5>Table </h5>
+
+                </div>
+            </div>
+            <!-- /. ROW  -->
+            <hr />
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            New Products
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <p>Categires Phones</p>
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>ProductName</th>
+                                            <th>Price</th>
+                                            <th>Discount</th>
+                                            <th>Stock</th>
+                                            <th>Ranking</th>
+                                            <th>Remove</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(let j of d){%>
+                                            <%if(j.Categories=="Phone"){%>
+                                                <tr>
+                                                    <td>
+                                                        <%=j.Productname%>
+                                                    </td>
+                                                    <td>
+                                                        <%=j.Price%>
+                                                    </td>
+                                                    <td>
+                                                        <%=j.Discount%>
+                                                    </td>
+                                                    <td>
+                                                        <%=j.ProductCount%>
+                                                    </td>
+                                                    <td>
+                                                        <%=j.Ranking%>
+                                                    </td>
+                                                    <td><a href="/removeProduct/<%=j._id %>">Remove</a></td>
+                                                </tr>
+                                                <%}%>
+
+                                                    <%}%>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                            <div class="table-responsive">
+                                <p>Categires Laptops</p>
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>ProductName</th>
+                                            <th>Price</th>
+                                            <th>Discount</th>
+                                            <th>Stock</th>
+                                            <th>Ranking</th>
+                                            <th>Remove</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(let j of d){%>
+                                            <%if(j.Categories=="Laptop"){%>
+                                                <tr>
+                                                    <td>
+                                                        <%=j.Productname%>
+                                                    </td>
+                                                    <td>
+                                                        <%=j.Price%>
+                                                    </td>
+                                                    <td>
+                                                        <%=j.Discount%>
+                                                    </td>
+                                                    <td>
+                                                        <%=j.ProductCount%>
+                                                    </td>
+                                                    <td>
+                                                        <%=j.Ranking%>
+                                                    </td>
+                                                    <td>
+                                                        <a href="/removeProduct/<%=j._id %>">Remove</a>
+                                                    </td>
+                                                </tr>
+                                                <%}%>
+
+                                                    <%}%>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                </div>
+            </div>

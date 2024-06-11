@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+  <style>
+    #login_ids {
+      display: none;
+    }
+
+    .main {
+      width: 350px;
+      height: 500px;
+      background: red;
+      overflow: hidden;
+      background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
+      border-radius: 50px;
+      background-color: #8019c8;
+      position: absolute;
+      bottom: 40%;
+      right: 50%;
+      transform: translate(50%, 50%);
+
+      z-index: 4;
+      box-shadow: 5px 20px 50px #000;
+    }
+
+    #chk {
+      display: none;
+    }
+
+    .signup {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .label {
+      color: rgb(3, 3, 98);
+      font-size: 2.3em;
+      justify-content: center;
+      display: flex;
+      margin: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .5s ease-in-out;
+    }
+
+    .input {
+      width: 60%;
+      height: 40px;
+      background: #e0dede;
+      justify-content: center;
+      display: flex;
+      margin: 10px auto;
+      padding: 10px;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+    }
+
+    .button {
+      width: 60%;
+      height: 40px;
+      margin: 10px auto;
+      justify-content: center;
+      display: block;
+      color: #fff;
+      background: #573b8a;
+      font-size: 1em;
+      font-weight: bold;
+      margin-top: 20px;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      transition: .2s ease-in;
+      cursor: pointer;
+
+    }
+
+    .button:hover {
+      background: #6d44b8;
+    }
+
+    .login {
+      height: 460px;
+      background: #6d44b8;
+      border-radius: 60% / 10%;
+      transform: translateY(-180px);
+      transition: .8s ease-in-out;
+    }
+
+    .login label {
+      color: white;
+      transform: scale(.6);
+    }
+
+    #chk:checked~.login {
+      transform: translateY(-500px);
+    }
+
+    #chk:checked~.login label {
+      transform: scale(1);
+    }
+
+    #chk:checked~.signup label {
+      transform: scale(.6);
+    }
+
+    #id {
+      display: block;
+    }
+
+    #update {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div class="hero_area"> -->
+  <!-- header section strats -->
+  <header class="header_sec tion">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="index.html">
+          <span>
+            Cellular
+          </span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""> </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav  ">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about"> About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/product">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/testimonial">Testimonial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Contact">Contact Us</a>
+            </li>
+          </ul>
+          <div class="user_optio_box" style="margin-right:35px">
+
+            <% if(a==true){%>
+              <div class="dropdown" style="text-align: center;">
+                <a class="" style="font-size:30px" data-toggle="dropdown">
+                  <i class="fa fa-user " aria-hidden="true"></i>
+                </a>
+
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/MyAccount">MY Account</a>
+                  <a class="dropdown-item" href="/carts">cart</a>
+                  <a class="dropdown-item" href="/Login_Out">LogOut</a>
+                </div>
+              </div>
+
+              <a href="/carts" style="font-size:30px">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <sub>
+                  <%=cartlength%>
+                </sub>
+              </a>
+              <%}%>
+                <p></p>
+                <p></p>
+                <% if(a==undefined){%>
+
+                  <!-- <button style="font-size:15px; margin-left: 8px; background: none;border: none;color:#8019c8; ">LogOut</button>  -->
+                  <!-- <a href="/Login_Out">LogOut</a> -->
+
+
+                  <!-- <button style="font-size:15px; margin-left: 8px; background: none;border: none;color:#8019c8; ">LogIn</button>  -->
+                  <a type="button" data-toggle="modal" data-target="#loginModal" id="g">LogIn</a>
+
+                  <!-- <button style="font-size:15px; margin-left: 8px; background: none;border: none;color:#8019c8; ">Signup</button>  -->
+                  <!-- <a href="/signup">Signup</a> -->
+                  <a type="button" data-toggle="modal" data-target="#signupModal">Signup</a>
+
+                  <%}%>
+
+
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true"
+    role="dialog">
+    <div class="modal-dialog" role="document">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        </div>
+        <div class="modal-body">
+
+
+          <p id="messageL" style="text-align:center"></p>
+
+          <p style="text-align: center; font-size: 25px;font-weight: bold;color:rgb(3, 3, 98);">Cellular</p>
+
+
+          <div class="signup">
+
+            <form id="myFormlogin">
+
+
+              <label for="chk" aria-hidden="true" class="label">LogIn</label>
+              <input type="email" name="Email" placeholder="Email" class="input" id="EmailL" required="">
+              <input type="password" name="Password" placeholder="Password" class="input" id="passwordL" required="">
+
+              <button type="submit" class="button">Login</button>
+              <p style="text-align:center;color:#140237"><a type="button" data-toggle="modal" data-target="#Forget"
+                  id="forget">forget password</a></p>
+            </form>
+          </div>
+
+
+
+        </div>
+
+        <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div> -->
+      </div>
+
+    </div>
+  </div>
+  <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true"
+    role="dialog">
+    <div class="modal-dialog" role="document">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" id="t">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p id="message" style="text-align: center;"></p>
+          <p style="text-align: center; font-size: 25px;font-weight: bold;color:rgb(3, 3, 98);">Cellular</p>
+          <div class="signup">
+            <form id="myFormsignup">
+              <label for="chk" aria-hidden="true" class="label">Sign UP</label>
+              <input type="text" name="Username" placeholder="Username" class="input" id="Username" required="">
+              <input type="email" name="Email" placeholder="Email" class="input" id="Email" required="">
+              <input type="password" name="Password" placeholder="Password" class="input" id="Password" required="">
+              <input type="password" name="PasswordC" placeholder="Password" class="input" id="Cpassword" required="">
+
+              <button type="submit" class="button">Signup</button>
+              <p style="text-align:center"><a type="button" data-toggle="modal" data-target="#loginModal"
+                  id="login_window">Login</a></p>
+
+
+            </form>
+          </div>
+
+
+
+        </div>
+
+        <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div> -->
+      </div>
+
+    </div>
+  </div>
+  <div class="modal fade" id="Forget" tabindex="-1" aria-labelledby="Forget" aria-hidden="true" role="dialog">
+    <div class="modal-dialog" role="document">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" id="t">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p style="text-align: center; font-size: 25px;font-weight: bold;color:rgb(3, 3, 98);">Cellular</p>
+          <div class="signup">
+            <form id="myForm">
+              <div class="signup">
+                <form action="/admin/forget" id="forget" method="post">
+
+                  <label for="chk" aria-hidden="true" class="label">Forget Password</label>
+                  <input type="email" name="email" placeholder="Enter Email" class="input" id="EmailF" required="">
+                  <!-- <input type="password" name="pswd" placeholder="Password" required=""> -->
+                  <button type="submit" class="button">Forget</button>
+                </form>
+              </div>
+            </form>
+          </div>
+
+
+
+        </div>
+
+        <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div> -->
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- </div>     -->
+</body>
+<script src="js/logins.js"></script>
+
+</html>

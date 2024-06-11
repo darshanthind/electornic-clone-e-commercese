@@ -1,0 +1,49 @@
+<%-include("admin_header",a)%>
+<div id="page-wrapper" style="position: relative;top:30px">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+             <h2> Admin Form</h2>   
+                <h5>admin FORM:</h5>
+               
+            </div>
+        </div>
+         <!-- /. ROW  -->
+         <hr />
+         <div class="row">
+            <div class="col-md-12">
+                <!-- Form Elements -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                       Updata Admin User form
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Basic Form Examples</h3>
+                                <form action="/admin/editupdateid/<%=datas._id%>" method="POST">
+                                    <div class="form-group">
+                                        <label>UserName</label>
+                                        <input type="text" value="<%=datas.Username%>" class="form-control" placeholder="Updata username" name="Username"/>
+                                        <p class="help-block">Help text here.</p>
+                                    </div>
+                                         <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="text" value="<%=datas.Password%>" class="form-control" placeholder="Update Password"  name="Password"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>City:</label>
+                                        <input type="Email" value="<%=datas.Email%>" class="form-control" placeholder="Updata Email" name="Email"/>
+                                    </div>
+                                    <button type="submit" class="btn btn-default">Update Button</button>
+                                    </div>
+                                   
+
+                                </form>
+         </div>
+         </div>
+         </div>
+         </div>
+        </div>
+        </div>
+        </div>

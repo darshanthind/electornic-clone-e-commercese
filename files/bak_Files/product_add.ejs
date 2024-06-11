@@ -1,0 +1,71 @@
+<%- include("admin_header.ejs")%>
+<div id="page-wrapper" style="position: relative;top:30px">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+             <h2>Products</h2>   
+                <h5>Products FORM:</h5>
+               
+            </div>
+        </div>
+         <!-- /. ROW  -->
+         <hr />
+         <div class="row">
+            <div class="col-md-12">
+                <!-- Form Elements -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Products form
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>Products Form Examples</h3>
+                                <form action="/admin/productstore" role="form" method="post" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label>Products Name:</label>
+                                        <input type="text" class="form-control w-100" placeholder="Product Name...." name="Productname"  style="height: 60px;" />
+                                        <p class="help-block">Help text here.</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description:</label>
+                                        <input type="text" class="form-control" placeholder="Description...."  name="Description"  style="height: 60px;"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Price:</label>
+                                        <input type="text" class="form-control" placeholder="Price..." name="Price"  style="height: 60px;"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Discount:</label>
+                                        <input type="text" class="form-control" placeholder="Discount.." name="Discount"  style="height: 60px;"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Ranking</label>
+                                        <input type="text" class="form-control input-lg" placeholder="Ranking..." name="Ranking"  style="height: 60px;"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Categories</label>
+                                        <input type="text" class="form-control input-lg" placeholder="Type..." name="Categories" id="inputdefault"  style="height: 60px;" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Counts</label>
+                                        <input type="text" class="form-control" placeholder="Product Count..." name="Count" style="height: 60px;"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Image:</label>
+                                        <input type="file" class="form-control"  name="img" style="height: 60px;"/>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-default">Submit</button>
+                                    </div>
+                                   
+
+                                </form>
+         </div>
+         </div>
+         </div>
+         </div>
+        </div>
+        </div>
+        </div>
+

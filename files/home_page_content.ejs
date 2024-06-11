@@ -1,0 +1,348 @@
+<body>
+  <section class="service_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/feature-1.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Fast Delivery
+              </h5>
+              <p>
+                variations of passages of Lorem Ipsum available
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="box ">
+            <div class="img-box">
+              <img src="images/feature-2.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Free Shiping
+              </h5>
+              <p>
+                variations of passages of Lorem Ipsum available
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="box ">
+            <div class="img-box">
+              <img src="images/feature-3.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Best Quality
+              </h5>
+              <p>
+                variations of passages of Lorem Ipsum available
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="box ">
+            <div class="img-box">
+              <img src="images/feature-4.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                24x7 Customer support
+              </h5>
+              <p>
+                variations of passages of Lorem Ipsum available
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about_section layout_padding">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img_container">
+            <div class="img-box b1">
+              <img src="<%=d[2].img%>" alt="">
+            </div>
+            <div class="img-box b2">
+              <img src="<%=d[1].img%>" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <h2>
+              About Our Shop
+            </h2>
+            <p>s
+
+              A cellular device is a type of electronic device that communicates using cellular networks. These networks
+              consist of a system of interconnected base stations that provide coverage over a certain geographic area.
+              Cellular devices, commonly known as cell phones or mobile phones, utilize these networks to make calls,
+              send text messages, and access data services such as the internet.
+            </p>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="product_section ">
+    <div class="container">
+      <div class="product_heading">
+        <h2>
+          Top Sale Products.
+        </h2>
+      </div>
+      <div class="product_container">
+        <% let p=0%>
+          <% for(let g of d){%>
+            <%if(p<3){%>
+              <div class="box">
+                <div class="box-content">
+                  <div class="img-box">
+                    <img src="<%=g.img%>" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <div class="text">
+                      <h6>
+                        <%=g.Productname%>
+                      </h6>
+                      <h5>
+                        <span>INR</span>
+                        <%=g.Price%>
+                      </h5>
+                    </div>
+                    <div class="like">
+                      <h6>
+                        Like
+                      </h6>
+                      <div class="star_container">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-box">
+                  <a href="/productcard/<%=g._id%>">
+                    Add To Cart
+                  </a>
+                </div>
+              </div>
+              <%}%>
+                <% p++%>
+                  <%}%>
+                    <!-- <div class="box">
+              <div class="box-content">
+                <div class="img-box">
+                  <img src="images/w2.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <div class="text">
+                    <h6>
+                      Men's Watch
+                    </h6>
+                    <h5>
+                      <span>$</span> 300
+                    </h5>
+                  </div>
+                  <div class="like">
+                    <h6>
+                      Like
+                    </h6>
+                    <div class="star_container">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-box">
+                <a href="">
+                  Add To Cart
+                </a>
+              </div>
+            </div>
+            <div class="box">
+              <div class="box-content">
+                <div class="img-box">
+                  <img src="images/w3.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <div class="text">
+                    <h6>
+                      Men's Watch
+                    </h6>
+                    <h5>
+                      <span>$</span> 300
+                    </h5>
+                  </div>
+                  <div class="like">
+                    <h6>
+                      Like
+                    </h6>
+                    <div class="star_container">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-box">
+                <a href="">
+                  Add To Cart
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+       end product section -->
+
+
+                    <!-- product section -->
+
+                    <section class="product_section ">
+                      <div class="container">
+                        <div class="product_heading">
+                          <h2>
+                            Laptops
+                          </h2>
+                        </div>
+                        <div class="product_container">
+                          <% let j=0%>
+                            <% for(let g of d){%>
+                              <% if(g.Categories=="Laptop" ){%>
+                                <% if(j<3){%>
+                                  <div class="box">
+                                    <div class="box-content">
+                                      <div class="img-box">
+                                        <img src="<%=g.img%>" alt="">
+                                      </div>
+                                      <div class="detail-box">
+                                        <div class="text">
+                                          <h6>
+                                            <%=g.Productname%>
+                                          </h6>
+                                          <h5>
+                                            <span>INR</span>
+                                            <%=g.Price%>
+                                          </h5>
+                                        </div>
+                                        <div class="like">
+                                          <h6>
+                                            Like
+                                          </h6>
+                                          <div class="star_container">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="btn-box">
+                                      <a href="/productcard/<%=g._id%>">
+                                        Add To Cart
+                                      </a>
+                                    </div>
+                                  </div>
+                                  <%}%>
+                                    <%j++%>
+                                      <%}%>
+                                        <%}%>
+                                          <!-- <div class="box">
+              <div class="box-content">
+                <div class="img-box">
+                  <img src="images/w5.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <div class="text">
+                    <h6>
+                      Men's Watch
+                    </h6>
+                    <h5>
+                      <span>$</span> 300
+                    </h5>
+                  </div>
+                  <div class="like">
+                    <h6>
+                      Like
+                    </h6>
+                    <div class="star_container">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-box">
+                <a href="">
+                  Add To Cart
+                </a>
+              </div>
+            </div> -->
+                                          <!-- <div class="box">
+              <div class="box-content">
+                <div class="img-box">
+                  <img src="images/w6.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <div class="text">
+                    <h6>
+                      Men's Watch
+                    </h6>
+                    <h5>
+                      <span>$</span> 300
+                    </h5>
+                  </div>
+                  <div class="like">
+                    <h6>
+                      Like
+                    </h6>
+                    <div class="star_container">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-box">
+                <a href="">
+                  Add To Cart
+                </a>
+              </div>
+            </div>  -->
+                        </div>
+                      </div>
+                    </section>

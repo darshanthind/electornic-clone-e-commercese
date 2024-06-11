@@ -1,0 +1,54 @@
+<%-include("admin_header",a)%>
+<div id="page-wrapper" style="position: relative;top:30px;">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+             <h2>User cart Item </h2>   
+                <h5>Table </h5>
+               
+            </div>
+        </div>
+         <!-- /. ROW  -->
+         <hr />
+       
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Advanced Tables -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <%=d.Username%> Product Cart
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                                <tr>
+                                    <th>ProductName</th>
+                                    <th>Price</th>
+                                    <th>Discount</th>
+                                    <th>Quentity</th>
+                                   <th>Categories</th>
+                                    
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for(let p of d.Products){%>
+                                    <tr>
+                                    <td><%=p.Productname%></td>
+                                    <td><%=p.Price%></td>
+                                    <td><%=p.Discount%></td>
+                                    <td><%=p.Quentity%></td>
+                                    <td><%=p.Categories%></td>
+                                   
+                                    </tr>
+                                <%}%>
+                              </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+            </div>
+            <!--End Advanced Tables -->
+        </div>
+    </div>

@@ -1,0 +1,180 @@
+<%-include("header.ejs")%>
+  <section class="product_section ">
+    <div class="container">
+      <div class="product_heading">
+        <h2>
+          Phones
+        </h2>
+      </div>
+      <div class="product_container" style="overflow: hidden; height: 600px; ">
+        <% for(let p of d){%>
+          <% if(p. Categories=="Phone" ){%>
+            <div class="box">
+              <div class="box-content">
+                <div class="img-box">
+                  <img src="<%=p.img%>" alt="">
+                </div>
+                <div class="detail-box">
+                  <div class="text">
+                    <h6>
+                      <%=p.Productname%>
+
+
+                    </h6>
+                    <h5>
+                      <span>INR</span>
+                      <%=p.Price%>
+                    </h5>
+                    <br>
+                    <div class="text-center" style="width: 100%;">
+                      <p>
+                        <%=p.Description%>
+                      </p>
+                    </div>
+
+                  </div>
+                  <div class="like">
+                    <h6>
+                      Ranking:
+                    </h6>
+
+                    <div class="star_container">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+
+
+
+
+                  </div>
+                </div>
+              </div>
+              <div class="btn-box">
+                <a href="/productcard/<%=p._id%>">
+                  Add To Cart
+                </a>
+              </div>
+            </div>
+
+
+            <%}%>
+
+              <%}%>
+
+      </div>
+      <div class="btn-box text-center" style="font-size: 20px;">
+        <button id="0" onclick="more(this.id)">
+          More...
+          <span>
+            <i class="bi bi-caret-down-fill" id="2"></i>
+          </span>
+        </button>
+      </div>
+    </div>
+
+  </section>
+  <section class="product_section ">
+    <div class="container">
+      <div class="product_heading">
+        <h2>
+          Laptops
+        </h2>
+      </div>
+      <div class="product_container" style="height: 650px;overflow: hidden;">
+        <% for(let p of d){%>
+          <% if(p. Categories=="Laptop" ){%>
+            <div class="box">
+              <div class="box-content">
+                <div class="img-box">
+                  <img src="<%=p.img%>" alt="">
+                </div>
+                <div class="detail-box">
+                  <div class="text">
+                    <h6>
+                      <%=p.Productname%>
+
+
+                    </h6>
+                    <h5>
+                      <span>INR</span>
+                      <%=p.Price%>
+                    </h5>
+                    <br>
+                    <div class="text-center" style="margin:auto">
+                      <p>
+                        <%=p.Description%>
+                      </p>
+                    </div>
+
+                  </div>
+                  <div class="like">
+                    <h6>
+                      Ranking:
+                    </h6>
+
+                    <div class="star_container">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+
+
+
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="btn-box">
+                <a href="/productcard/<%=p._id%>">
+                  Add To Cart
+                </a>
+              </div>
+            </div>
+
+            <%}%>
+              <%}%>
+      </div>
+      <div class="btn-box text-center" style="font-size: 20px;">
+        <button id="1" onclick="more(this.id)">
+          More...
+          <span>
+            <i class="bi bi-caret-down-fill" id="3"></i>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // let up = 0, down = 0;
+    function more(id) {
+      console.log(id);
+      let d = document.getElementsByClassName("product_container");
+      let f = parseInt(id) + 2;
+      let g = document.getElementById(f);
+
+      let h = (d[id].style.height).split('p');
+      console.log(h[0]);
+      if (h[0] < 1000) {
+
+        d[id].style.height = "100%";
+        g.classList.remove("bi-caret-down-fill");
+        g.classList.add("bi-caret-up-fill");
+
+
+      } else if (h[0] == "100%") {
+        g.classList.remove("bi-caret-up-fill");
+        g.classList.add("bi-caret-down-fill");
+
+        d[id].style.height = "650px";
+      }
+    }
+
+  </script>
+  <%-include("footer.ejs")%>

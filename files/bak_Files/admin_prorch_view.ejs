@@ -1,0 +1,64 @@
+<%-include("admin_header",a)%>
+<div id="page-wrapper" style="position: relative;top:30px;">
+    <div id="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+             <h2>Table Examples</h2>   
+                <h5>Welcome Jhon Deo , Love to see you back. </h5>
+               
+            </div>
+        </div>
+         <!-- /. ROW  -->
+         <hr />
+       
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Advanced Tables -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                     Advanced Tables
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                                <tr>
+                                    <th>Productname</th>
+                                    <th>id</th>
+                                    <th>DateTime</th>
+                                    <th>status</th>
+                                    <th>Deatline</th>
+                                    <th>Result</th>
+                                    <th>edit</th>
+                                    <th>view</th>
+                                    <th>Remove</th>
+                                    <!-- <th>Remove</th> -->
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for( let i of product){%>
+                                    <%for(let j of i.Products){%>
+                                        <tr>
+                                    <td><%=j.ProductName%></td>
+                                    <td><%=j._id%></td>
+                                    <td><%=i.Date%></td>
+                                    <td><%=j.Status.Status_prod%></td>
+                                    <td><%=j.Status.Deadline%></td>
+                                    <td><%=j.Status.Result%></td>
+                                    <td> <a href="/admin/edit_S/<%=j._id%>/<%=id%>">Edit</a></td>
+                                    <td>view</td>
+                                    <td>remove</td>
+                                    </tr>
+                                    <%}%>
+                                    <%}%>
+                            </tbody>
+
+                        </table>
+                    </div>
+                    
+                </div>
+            </div>
+            <!--End Advanced Tables -->
+        </div>
+    </div>
