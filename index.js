@@ -19,7 +19,7 @@ const { v4: uuidv4 } = require("uuid");
 
 const mongoose = require("mongoose");
 const home_p = require("./Routers_font/produ");
-
+mongoose.set('strictQuery', false);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "./files"));
 app.use(cors())
