@@ -13,6 +13,7 @@ const p_carts = require("./model/products_cart");
 const session = require("express-session");
 const stripe = require('stripe')(process.env.STRIP_KEY);
 require('dotenv').config()
+const MongoStore = require('connect-mongo');
 
 const { v4: uuidv4 } = require("uuid");
 
@@ -28,10 +29,23 @@ app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.static("uploads"));
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
+const Store = MongoStore.create({
+    mongoUrl: process.env.CONNECTION,
+    crypto: {
+        secret: process.env.key
+    }
+
+})
+
 app.use(session({
-    secret: "abs",
+    store: Store,
+    secret: process.env.key,
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {
+
+    }
+
 }));
 
 app.use(function (req, res, next) {
