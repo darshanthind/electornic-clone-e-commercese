@@ -36,7 +36,7 @@ const Store = MongoStore.create({
     }
 
 })
-
+console.log(Store);
 app.use(session({
     store: Store,
     secret: process.env.key,
